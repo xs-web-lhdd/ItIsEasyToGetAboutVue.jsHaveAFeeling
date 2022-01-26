@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./Lvue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>{{counter}}</div>
+    <div l-text="counter"></div>
+    <div l-html="desc"></div>
+    <div l-l='counter'></div>
+  </div>
+  <script>
+    const app = new Lvue({
+      data: {
+        counter: 0,
+        desc: '手写 <span style="color: red;">Vue</span> 来啦'
+      },
+    })
+
+    setInterval(() => {
+      app.data.counter++
+    }, 1000)
+  </script>
+</body>
+</html>
